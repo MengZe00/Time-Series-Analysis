@@ -1,0 +1,21 @@
+zt=c(200, 202, 208, 204, 204, 207, 207, 204, 202, 199, 201, 198, 200, 202, 203, 205, 207, 211,
+     204, 206, 203, 203, 201, 198, 200, 206, 207, 206, 200, 203, 200, 200, 195, 202, 204)
+zt0=ts(zt)
+#(a)
+plot(zt0, ylab="temperature")
+#(b)
+zt1=ts(zt, start = 0)
+plot(zt0, ylab="temperature")
+lines(zt1, col="blue")
+#(c)
+zt2=ts(zt, start = -1)
+plot(zt0, ylab="temperature")
+lines(zt2, col="blue")
+#(d)
+acf=acf(zt0, lag.max = 10, plot=F)
+acf10=round(c(acf$acf)[-1],4)
+paste("rho", 1:10, "=", acf10, sep = "")
+#(e)
+plot(acf)
+
+
